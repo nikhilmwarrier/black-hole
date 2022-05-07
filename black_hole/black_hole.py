@@ -2,6 +2,7 @@ __all__ = ["BlackHole"]
 
 import asyncio
 import logging
+import os
 
 from .xmpp import XMPP
 from .discord import Discord
