@@ -1,0 +1,50 @@
+# XMPP credentials (JID and password).
+xmpp:
+  jid: 'supernik@tigase.im'
+
+# black-hole supports multiple "rooms".
+#
+# The concept of a "room" in black-hole combines both a MUC and a Discord
+# channel. They are linked together with a Discord bot, a Discord webhook,
+# and an XMPP client.
+rooms:
+  - jid: 'zz-discord-bridge-no-sen@chat.disroot.org' # The JID of the MUC.
+
+    # The MUC's password. Omit if password-less.
+    # password: 'spicy ramen'
+
+    # The nickname to use when joining the MUC.
+    nick: 'robonik'
+
+    # The webhook URL to post to. (MUC → Discord)
+    webhook: 'https://discord.com/api/webhooks/972519663034597466/LJUj9un0s4H-jWfGgk_zd24q7aYX_u8LLZR1De047gFUsUrQ1XwvFWgG2LQbkM0gsxNm'
+
+    # The Discord channel's ID. (Discord → MUC)
+    channel_id: 972515750801723483
+
+    # Log any message sent in the MUC to standard out.
+    log: false
+
+    # Log any message sent in the linked Discord channel to standard out.
+    discord_log: false
+discord:
+  # Discord bot token, used to receive messages.
+  token: 'OTcyNTE2NjM5MTk3MjQ5NTQ2.GMYRqE.P4fHRCNzMxDYEn7w_PApICT8gdzSiQdaZjMzzA'
+
+  # A list of Discord user IDs that will be able to manage the bot from
+  # Discord.
+  managers:
+    - 803828175792635940
+
+  # A map of JIDs to Discord user IDs.
+  # Allows black-hole to specify the avatar URL of a JID's associated Discord
+  # account when posting to the webhook.
+  jid_map:
+    'nikhilmwarrier@disroot.org': 803828175792635940
+
+  # The delay in seconds between webhook sends (for maintaining message order).
+  delay: 0.25
+
+  # The delay in seconds before a cached avatar is invalidated and refetched,
+  # in seconds. The default is 30 minutes.
+  avatar_cache: 1800
