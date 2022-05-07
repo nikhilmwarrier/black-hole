@@ -21,7 +21,7 @@ class BlackHole:
 
         self.xmpp = XMPP(
             config["xmpp"]["jid"],
-            config["xmpp"]["password"],
+            os.environ['XMPP_PASSWORD'],
             config=config,
         )
 
