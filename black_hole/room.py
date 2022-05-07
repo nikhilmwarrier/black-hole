@@ -2,7 +2,7 @@ __all__ = ["Room"]
 
 import asyncio
 import logging
-
+import os
 import aioxmpp
 
 log = logging.getLogger(__name__)
@@ -38,7 +38,7 @@ class Room:
         room, _future = muc.join(
             mucjid=aioxmpp.JID.fromstr(self.config["jid"]),
             nick=self.config.get("nick", "black-hole"),
-            password=self.config.get("password"),
+            password=os.environ['XMPP_PASSWORD'],
             history=aioxmpp.muc.xso.History(maxstanzas=0),
         )
 
