@@ -8,7 +8,7 @@ xmpp:
 # channel. They are linked together with a Discord bot, a Discord webhook,
 # and an XMPP client.
 rooms:
-  - jid: 'zz-discord-bridge-no-sen@chat.disroot.org' # The JID of the MUC.
+  - jid: 'zz-no-sen-discord@chat.disroot.org' # The JID of the MUC.
 
     # The MUC's password. Omit if password-less.
     # password: 'spicy ramen'
